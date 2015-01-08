@@ -40,6 +40,7 @@
 		80EE09D1196A4C4A00B77AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80EE09D2196A4C4A00B77AB0 /* CarbonVisualizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonVisualizerTests.swift; sourceTree = "<group>"; };
 		80EE09DC196A4C8B00B77AB0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C24B80361A5E96BB00703CCD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 		80EE09B1196A4C4A00B77AB0 = {
 			isa = PBXGroup;
 			children = (
+				C24B80361A5E96BB00703CCD /* README.md */,
 				80EE09BC196A4C4A00B77AB0 /* CarbonVisualizer */,
 				80EE09CF196A4C4A00B77AB0 /* CarbonVisualizerTests */,
 				80EE09BB196A4C4A00B77AB0 /* Products */,

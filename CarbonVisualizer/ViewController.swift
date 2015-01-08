@@ -28,6 +28,13 @@ class ViewController: UIViewController {
   @IBOutlet weak var geometryLabel: UILabel!
   @IBOutlet weak var sceneView: SCNView!
   
+  // Geometry
+  var geometryNode: SCNNode = SCNNode()
+  
+  // Gestures
+  var currentAngle: Float = 0.0
+  
+  
   // MARK: Lifecycle
   override func viewDidLoad() {
       super.viewDidLoad()
@@ -35,10 +42,86 @@ class ViewController: UIViewController {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+    sceneSetup()
+    geometryLabel.text = "Atoms\n"
+    geometryNode = Atoms.allAtoms()
+    sceneView.scene!.rootNode.addChildNode(geometryNode)
   }
+  
+  func panGesture(sender: UIPanGestureRecognizer) {
+    println("panGesture")
+    let translation = sender.translationInView(sender.view!)
+    var newAngle = (Float)(translation.x) * (Float)(M_PI)/180.0
+    newAngle += currentAngle
+    
+    geometryNode.transform = SCNMatrix4MakeRotation(newAngle, 0, 1, 0)
+    
+    if sender.state == UIGestureRecognizerState.Ended {
+      currentAngle = newAngle
+    }
+  }
+  
+  func sceneSetup() {
+    let scene = SCNScene()
+    
+    let ambientLightNode = SCNNode()
+    ambientLightNode.light = SCNLight()
+    ambientLightNode.light!.type = SCNLightTypeAmbient // SCNLightTypeDirectional  // SCNLightTypeOmni  // 
+    ambientLightNode.light!.color = UIColor(white: 0.67, alpha: 1.0)
+    scene.rootNode.addChildNode(ambientLightNode)
+
+    let omniLightNode = SCNNode()
+    omniLightNode.light = SCNLight()
+    omniLightNode.light!.type = SCNLightTypeOmni
+    omniLightNode.light!.color = UIColor(white: 0.67, alpha: 1.0)
+    omniLightNode.position = SCNVector3Make(0, 50, 50)
+    scene.rootNode.addChildNode(omniLightNode)
+    
+    let cameraNode = SCNNode()
+    cameraNode.camera = SCNCamera()
+    cameraNode.position = SCNVector3Make(0, 0, 25)
+    scene.rootNode.addChildNode(cameraNode)
+
+    /*
+    let boxGeometry = SCNBox(width: 10.0, height: 10.0, length: 10.0, chamferRadius: 1.0)
+    let boxNode = SCNNode(geometry: boxGeometry)
+    scene.rootNode.addChildNode(boxNode)
+    geometryNode = boxNode
+    */
+
+    let panRecognizer = UIPanGestureRecognizer(target: self, action: "panGesture:")
+    sceneView.addGestureRecognizer(panRecognizer)
+    
+    sceneView.scene = scene
+    //sceneView.autoenablesDefaultLighting = true
+    //sceneView.allowsCameraControl = true
+  }
+  
+  
   
   // MARK: IBActions
   @IBAction func segmentValueChanged(sender: UISegmentedControl) {
+    geometryNode.removeFromParentNode()
+    currentAngle = 0.0
+    
+    switch sender.selectedSegmentIndex {
+    case 0:
+      geometryLabel.text = "Atoms\n"
+      geometryNode = Atoms.allAtoms()
+    case 1:
+      geometryLabel.text = "Methane\n(Natural Gas)"
+      geometryNode = Molecules.methaneMolecule()
+    case 2:
+      geometryLabel.text = "Ethanol\n(Alcohol)"
+      geometryNode = Molecules.ethanolMolecule()
+    case 3:
+      geometryLabel.text = "Polytetrafluoroethylene\n(Teflon)"
+      geometryNode = Molecules.ptfeMolecule()
+    default:
+      break
+    }
+    
+    sceneView.scene!.rootNode.addChildNode(geometryNode)
   }
   
   // MARK: Style
