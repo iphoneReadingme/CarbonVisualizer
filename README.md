@@ -23,7 +23,7 @@ class func ethanolMolecule() -> SCNNode {
   return ethanolMolecule
 }
 ```
-
+![](https://github.com/Charles-Hsu/CarbonVisualizer/blob/master/Ethanol.png)
 
 ```swift
   class func ptfeMolecule() -> SCNNode {
@@ -53,4 +53,4 @@ class func ethanolMolecule() -> SCNNode {
   }
 
 ```
-
+![](https://github.com/Charles-Hsu/CarbonVisualizer/blob/master/Polytetrafluoroethylene.png)
