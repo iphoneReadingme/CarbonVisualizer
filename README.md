@@ -54,3 +54,7 @@ class func ethanolMolecule() -> SCNNode {
 
 ```
 ![](https://github.com/Charles-Hsu/CarbonVisualizer/blob/master/Polytetrafluoroethylene.png)
+
+##Credit
+
+[Beginning Scene Kit Tutorial](http://www.raywenderlich.com/83748/beginning-scene-kit-tutorial) by Ricardo Rendon Cepeda
