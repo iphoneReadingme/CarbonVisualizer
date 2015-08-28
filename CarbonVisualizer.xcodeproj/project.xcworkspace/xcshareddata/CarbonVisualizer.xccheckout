@@ -10,6 +10,8 @@
 	<string>CarbonVisualizer</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>25c9d04a-b3a8-236c-0958-ce57b7db7bff++505</key>
+		<string>https://readingme%40126.com@github.com/iphoneReadingme/CarbonVisualizer.git/trunk</string>
 		<key>F79D2EAD16A74366D61B1CC0265F3998338C4D24</key>
 		<string>https://github.com/Charles-Hsu/CarbonVisualizer.git</string>
 	</dict>
@@ -17,15 +19,22 @@
 	<string>CarbonVisualizer.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F79D2EAD16A74366D61B1CC0265F3998338C4D24</key>
+		<key>25c9d04a-b3a8-236c-0958-ce57b7db7bff++505</key>
 		<string>../..</string>
+		<key>F79D2EAD16A74366D61B1CC0265F3998338C4D24</key>
+		<string>../../../CarbonVisualizer</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>25c9d04a-b3a8-236c-0958-ce57b7db7bff++505</key>
+		<string>https://readingme%40126.com@github.com/iphoneReadingme/CarbonVisualizer.git</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Charles-Hsu/CarbonVisualizer.git</string>
+	<string>https://readingme%40126.com@github.com/iphoneReadingme/CarbonVisualizer.git/trunk/CarbonVisualizer.xcodeproj</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F79D2EAD16A74366D61B1CC0265F3998338C4D24</string>
+	<string>25c9d04a-b3a8-236c-0958-ce57b7db7bff++505</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +44,14 @@
 			<string>F79D2EAD16A74366D61B1CC0265F3998338C4D24</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CarbonVisualizer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>25c9d04a-b3a8-236c-0958-ce57b7db7bff++505</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CarbonVisualizer20150828</string>
 		</dict>
 	</array>
 </dict>
